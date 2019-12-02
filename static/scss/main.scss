@@ -1,0 +1,280 @@
+
+$danger: #8b3030;
+$info: #4f6a7a;
+// Required
+@import "../assets/bootstrap/scss/bootstrap.scss";
+@import "../assets/fontawesome/css/all.min.css";
+@import "tables.scss";
+@import "forms.scss";
+$font-stack: 'Open Sans', sans-serif;
+$bg-color: #2c3e50;
+
+
+
+$primary-color: #2A6296;
+$navbar-bg: #374859;
+$highlight: rgb(226, 226, 226);
+$placeholder: rgb(179, 179, 179);
+
+// forms
+$form-border-color: #374859;
+$form-border-size: 2px;
+$form-bg: rgb(255, 255, 255);
+
+html {
+    height: 100%;
+    background: #2C3E50;
+    font-family: $font-stack;
+}
+
+body {
+    margin: 0;
+    background-color: inherit;
+    color: #b7c0c9;
+}
+
+.container {
+    max-width: 90%;
+}
+
+.restricted {
+    visibility: hidden;
+}
+
+h3 {
+    display: inline;
+}
+
+*:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $placeholder !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: $placeholder !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: $placeholder !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: $placeholder !important;
+}
+
+
+header {
+    grid-area: header;
+    background-color: $navbar-bg;
+}
+
+nav {
+    grid-area: nav;
+    background-color: $navbar-bg;
+
+    .navbar-brand {
+        font-family: "Varela Round";
+    }
+
+    ul {
+        list-style-type: none;
+
+        li {
+            a {
+                color: #FFFFFF;
+                text-decoration: none;
+    
+            }
+        }
+    }
+}
+
+main {
+    grid-area: content;
+}
+
+ul {
+    padding-inline-start: 0;
+}
+
+#element-list {
+    list-style-type: none;
+
+    li {
+        display: inline;
+    }
+}
+.nav-item {
+    &:hover {
+        background-color: #205C80;
+    }
+}
+.card {
+    // disable highlighting
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+    h1 {
+        font-size: 4.0rem;
+    }
+    &:hover {
+        background-color: $highlight;
+    }
+}
+
+// show/hide password
+.seamless-icon {
+    cursor: pointer;
+    color: rgb(189, 189, 189);
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid inherit;
+    border-radius: 0;
+}
+.seamless-prepend {
+    padding-left: 0;
+    color: rgb(50, 82, 104);
+    background-color: inherit;
+    border: none;
+}
+
+.fancy-checkbox input[type="checkbox"],
+.fancy-checkbox .checked {
+    display: none;
+}
+.fancy-checkbox input[type="checkbox"],
+.fancy-checkbox .checked {
+    display: none;
+}
+.fancy-checkbox input[type="checkbox"]:checked ~ .checked
+{
+    display: inline-block;
+}
+.fancy-checkbox input[type="checkbox"]:checked ~ .unchecked
+{
+    display: none;
+}
+
+.form-control {
+    color: #959fa8;
+    background-color: inherit;
+    border: none;
+    border-bottom: $form-border-size solid $form-border-color;
+    border-radius: 1px;
+    outline: none;
+    box-shadow: none;
+
+    &:focus {
+        color: #959fa8;
+        outline: 0;
+        box-shadow: 0;
+        background-color: inherit;
+        border-color: #5a728a;
+    }
+
+    &:valid {
+        border-color: rgb(28, 155, 70);
+    }
+    &::placeholder {
+        color: #516379 !important;
+    }
+
+}
+
+.form-check-input:invalid {
+    outline: none;
+}
+
+/* ==================================================
+                Tabs
+==================================================  */
+
+
+
+/* ==================================================
+                Users List
+==================================================  */
+
+
+/* ==================================================
+                Modals
+==================================================  */
+.modal-header {
+    border: none;
+}
+
+.modal-body {
+    color: #262626;;
+}
+
+.modal-content {
+    border: none;
+    outline: none;
+    border-radius: 0.125rem;
+}
+.modal-footer {
+    border: none;
+}
+
+.fade {
+    -webkit-transition: all 0.125s ease;
+-moz-transition: all 0.125s ease;
+transition: all 0.125s ease;
+}
+
+
+/* ==================================================
+                    Dropdown
+==================================================  */
+.nav-dropdown {
+    top: 46px;
+    left: -140px;
+    width: 300px;
+}
+
+.dropdown::after {
+    content: none;
+}
+
+.btn-link {
+    color: $highlight;
+}
+
+.btn-link:hover {
+    color: $highlight;
+    text-decoration: none;
+    background-color: $info;
+}
+
+.btn-link:focus  {
+    color: $highlight;
+    text-decoration: none;
+    background-color: $info;
+}
+
+
+
+/* ==================================================
+                    Forms
+==================================================  */
+#signin-response {
+    display: block;
+}
+
+#signup-error {  // email exists
+    display: block;
+    color: #c94747;
+}
+
+#signup-success {
+    color: #439c47;
+}
+
+#invalid-email {
+    padding-left: 35px;
+}

@@ -1,0 +1,336 @@
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="author" content="Josh Layton">
+  
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round&display=swap" rel="stylesheet"> 
+
+  </head>
+  
+  <body class="d-flex flex-column">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">USER MANAGEMENT</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            
+            <div class="dropdown">
+              <button type="button" class="btn btn-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sign in
+              </button>
+              <div class="dropdown-menu nav-dropdown" id="sign-in-menu">
+                <form class="px-4 py-3" id="signin-form">
+                  <div class="form-group">
+                    <label for="signin-email">Email</label>
+                    <input type="email" class="form-control" id="signin-email" placeholder="email@example.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="signin-password">Password</label>
+                    <input type="password" class="form-control" id="signin-password" placeholder="Password">
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                    <label class="form-check-label" for="dropdownCheck">
+                      Remember me
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Sign in</button>
+                  <small class="mt-2" id="signin-response"></small>
+                </form>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-center" href="#">Sign up instead</a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <button type="button" class="btn btn-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sign up
+              </button>
+              <div class="dropdown-menu nav-dropdown" id="sign-up-menu">
+                 <form id="createUserForm" class="px-4 py-3 justify-content-center">
+              <div class="form-row mb-4">
+                <div class="col">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text seamless-prepend"><i class="fa fa-envelope fa-fw"></i></span>
+                    </div>
+                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                    <small class="w-100" id="invalid-email"></small>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row mb-3">
+                <div class="col">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text seamless-prepend" id="inputGroupPrepend"><i class="fa fa-lock fa-fw"></i></span>
+                    </div>
+                    <input type="password" class="form-control" id="password" placeholder="password" aria-describedby="inputGroupAppend" required>
+                    <div class="input-group-append">
+                      <label class="input-group-text fancy-checkbox seamless-icon">
+                        <input type="checkbox" id="hideShowPass">
+                        <i class="far fa-eye fa-fw unchecked" title="Show password"></i>
+                        <i class="far fa-eye-slash fa-fw checked" title="Hide password"></i>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row mb-4">
+                <div class="col">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text seamless-prepend"><i class="fa fa-fw"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="firstName" placeholder="First name" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row mb-4">
+                <div class="col">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text seamless-prepend"><i class="fa fa-fw"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="lastName" placeholder="Last name" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row mb-4">
+                <div class="col">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text seamless-prepend"><i class="fas fa-phone fa-fw"></i></span>
+                    </div>
+                    <input type="phone" class="form-control" id="phone" placeholder="Phone" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text seamless-prepend"><i class="fa-fw"></i></span>
+                    </div>
+                    <button class="btn btn-primary " type="submit">Submit</button>
+                    <small class="ml-4" id="signup-response"></small>
+                  </div>
+                </div>
+              </div>
+            </form>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-center" href="#">Sign in instead</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 mt-4 restricted">
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-create" role="tabpanel" aria-labelledby="pills-home-tab">
+              <form id="createUserForm" class="justify-content-center">
+                <div class="form-row mb-4">
+                  <div class="col-md-7">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text seamless-prepend"><i class="fa fa-envelope fa-fw"></i></span>
+                      </div>
+                      <input type="email" class="form-control" id="email" placeholder="Email" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row mb-3">
+                  <div class="col-7">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text seamless-prepend" id="inputGroupPrepend"><i class="fa fa-lock fa-fw"></i></span>
+                      </div>
+                      <input type="password" class="form-control" id="password" placeholder="password" aria-describedby="inputGroupAppend" required>
+                      <div class="input-group-append">
+                        <label class="input-group-text fancy-checkbox seamless-icon">
+                          <input type="checkbox" id="hideShowPass">
+                          <i class="far fa-eye fa-fw unchecked" title="Show password"></i>
+                          <i class="far fa-eye-slash fa-fw checked" title="Hide password"></i>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row mb-4">
+                  <div class="col-md-7">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text seamless-prepend"><i class="fa fa-fw"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="firstName" placeholder="First name" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row mb-4">
+                  <div class="col-md-7">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text seamless-prepend"><i class="fa fa-fw"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="lastName" placeholder="Last name" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row mb-4">
+                  <div class="col-md-7">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text seamless-prepend"><i class="fas fa-phone fa-fw"></i></span>
+                      </div>
+                      <input type="phone" class="form-control" id="phone" placeholder="Phone" required>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </form>
+            </div>
+
+            <div class="tab-pane fade" id="pills-edit" role="tabpanel" aria-labelledby="pills-profile-tab">
+              <form id="updateUserForm">
+                <div class="form-row mb-4">
+                  <div class="col-md-4 fixed">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text seamless-prepend"><i class="fas fa-key fa-fw"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="edit-id" placeholder="id">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row mb-4">
+                  <div class="col-md-7">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text seamless-prepend"><i class="fa fa-envelope fa-fw"></i></span>
+                      </div>
+                      <input type="email" class="form-control" id="edit-email" placeholder="email" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row mb-3">
+                  <div class="col-7">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text seamless-prepend" id="inputGroupPrepend"><i class="fa fa-lock fa-fw"></i></span>
+                      </div>
+                      <input type="password" class="form-control" id="edit-password" placeholder="password" aria-describedby="inputGroupAppend" required>
+                      <div class="input-group-append">
+                        <label class="input-group-text fancy-checkbox seamless-icon">
+                          <input type="checkbox" id="hideShowPass">
+                          <i class="far fa-eye fa-fw unchecked" title="Show password"></i>
+                          <i class="far fa-eye-slash fa-fw checked" title="Hide password"></i>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row mb-4">
+                  <div class="col-md-7">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text seamless-prepend"><i class="fa fa-fw"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="edit-firstName" placeholder="First name" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row mb-4">
+                  <div class="col-md-7">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text seamless-prepend"><i class="fa fa-fw"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="edit-lastName" placeholder="Last name" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row mb-4">
+                  <div class="col-md-7">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text seamless-prepend"><i class="fas fa-phone fa-fw"></i></span>
+                      </div>
+                      <input type="phone" class="form-control" id="edit-phone" placeholder="Phone" required>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Update</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 text-break restricted">
+          <h1 class="my-5 text-center">Current Users</h1>
+          <ul id="usersList"></ul>
+          <div id="users"></div>
+        </div>
+      
+
+    </div>
+  </div>
+
+  <!--  ======== Modals  ========  -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="form-signin">
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div id="remember" class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+          </form>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+  
+
+  <footer>
+  </footer>
+    <!-- ======== JAVASCRIPT ======== -->
+
+    <!-- bootstrap -->
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,25 @@
+.table {
+    color: rgb(212, 212, 212);
+    border-spacing: 5px;
+    thead th {
+        border: none;
+        background-color: inherit;
+    }
+
+    th {
+        border: none;
+    }
+
+    td {
+        border: none;
+    }
+
+    tr:nth-child(even) {
+        background-color: inherit;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #0b22352a;
+    }
+}
+
